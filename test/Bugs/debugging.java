@@ -40,7 +40,6 @@ class debugging {
 	int stayLength;
 	int numberOfOccupants;
 	
-	
     String ArrivalDay;
     String ArrivalMonth;
     String ArrivalYear;
@@ -58,13 +57,11 @@ class debugging {
     
     @BeforeEach
     void setUp() throws Exception {
-    	
-    //    MockitoAnnotations.initMocks(this);
+
         cardType = CreditCardType.VISA;
         cardNumber = 1;
         cardCcv = 1;
-        
-		
+
 		numberOfOccupants = 1;
         name = "Daffodil";
         address = "6 Tulip Cres";
@@ -82,18 +79,6 @@ class debugging {
         
         roomServiceType = ServiceType.ROOM_SERVICE;
         serviceCost = 100.00;
-        /*
-        
-        try {
-        	m_hotel = HotelHelper.loadHotel();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        /*
-        checkoutCTL = new CheckoutCTL(m_hotel);
-        serviceCTL = new RecordServiceCTL(m_hotel);
-        
-        */
         
     }
     
@@ -104,10 +89,9 @@ class debugging {
 		Room room = new Room(roomId, roomType);
 		Date date = format.parse(ArrivalDay+"-"+ArrivalMonth+"-"+ArrivalYear);
 		Booking booking = new Booking(guest, room, date, stayLength, numberOfOccupants, creditCard);
-		booking.addServiceCharge(roomServiceType, serviceCost);
 		
 		//act
-		booking.checkOut();
+		booking.addServiceCharge(roomServiceType, serviceCost);
 		
         //assert
 		List<ServiceCharge> charges = booking.getCharges();
