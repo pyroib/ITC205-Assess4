@@ -1,3 +1,9 @@
+#project file
+.project
+
+# Word working files
+*.tmp
+
 # Compiled class file
 *.class
 
