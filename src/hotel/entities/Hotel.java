@@ -125,7 +125,7 @@ public class Hotel {
 			String mesg = String.format("Hotel: checkout: no booking present for room id : %d", roomId);
 			throw new RuntimeException(mesg);
 		} else {
-	//		activeBookingsByRoomId.remove(roomId);
+			activeBookingsByRoomId.remove(roomId);
 			booking.checkOut();
 		}
 	}
